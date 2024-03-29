@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/appsettings.Development.json
+/obj
+/.vs/CosmosRecipeGuide/FileContentIndex
+/.vs
+/bin/Debug/net7.0/appsettings.Development.json
+/bin/Debug/net7.0
