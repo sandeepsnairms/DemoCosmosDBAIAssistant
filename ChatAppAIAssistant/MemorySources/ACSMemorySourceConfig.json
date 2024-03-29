@@ -1,0 +1,14 @@
+{
+    "FacetedQueryMemorySources": [
+        {
+            "Filter": "entityType__ eq 'guides'",
+            "Facets": [
+                {
+                    "Facet": "category,count:0",
+                    "CountMemoryTemplate": "In the category named \"{0}\", there are a total number of {1} guides."
+                }
+            ],
+            "TotalCountMemoryTemplate": "There are a total number of {0} guides."
+        }
+    ]
+}

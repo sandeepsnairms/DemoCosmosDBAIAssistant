@@ -1,0 +1,13 @@
+{
+    "TextChunkMaxTokens": 250,
+    "TextFileMemorySources": [
+        {
+            "ContainerName": "policy",
+            "TextFiles": [{
+                    "FileName": "policies.txt",
+                    "SplitIntoChunks": true
+                }
+            ]
+        }
+    ]
+}

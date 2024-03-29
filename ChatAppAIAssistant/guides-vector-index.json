@@ -1,0 +1,104 @@
+{
+	"name": "guides-vector-index",
+	"fields": [
+		{
+			"name": "Id",
+			"type": "Edm.String",
+			"searchable": false,
+			"filterable": false,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": false,
+			"key": true
+		},
+		{
+			"name": "Embedding",
+			"type": "Collection(Edm.Single)",
+			"searchable": true,
+			"filterable": false,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": false,
+			"key": false,
+			"dimensions": 1536,
+			"vectorSearchProfile": "searchProfile"
+		},
+		{
+			"name": "Text",
+			"type": "Edm.String",
+			"searchable": true,
+			"filterable": true,
+			"retrievable": true,
+			"sortable": true,
+			"facetable": true,
+			"key": false
+		},
+		{
+			"name": "Description",
+			"type": "Edm.String",
+			"searchable": false,
+			"filterable": true,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": true,
+			"key": false
+		},
+		{
+			"name": "AdditionalMetadata",
+			"type": "Edm.String",
+			"searchable": false,
+			"filterable": true,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": true,
+			"key": false
+		},
+		{
+			"name": "ExternalSourceName",
+			"type": "Edm.String",
+			"searchable": false,
+			"filterable": true,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": true,
+			"key": false
+		},
+		{
+			"name": "IsReference",
+			"type": "Edm.Boolean",
+			"searchable": false,
+			"filterable": true,
+			"retrievable": true,
+			"sortable": false,
+			"facetable": true,
+			"key": false
+		}
+	],
+	"similarity": {
+		"@odata.type": "#Microsoft.Azure.Search.BM25Similarity",
+		"k1": null,
+		"b": null
+	},
+	"vectorSearch": {
+		"algorithms": [
+			{
+				"name": "searchAlgorithm",
+				"kind": "hnsw",
+				"hnswParameters": {
+					"metric": "cosine",
+					"m": 4,
+					"efConstruction": 400,
+					"efSearch": 500
+				},
+				"exhaustiveKnnParameters": null
+			}
+		],
+		"profiles": [
+			{
+				"name": "searchProfile",
+				"algorithm": "searchAlgorithm",
+				"vectorizer": null
+			}
+		]
+	}
+}
